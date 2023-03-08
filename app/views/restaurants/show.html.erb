@@ -12,4 +12,13 @@
   <% end %>
 </div>
 
+<div class="my-5">Add a review</div>
+
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
+
+<div class="my-5"></div>
+
 <%= link_to "Back to all restaurants", restaurants_path %>
