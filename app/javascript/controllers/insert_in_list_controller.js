@@ -27,11 +27,14 @@ export default class extends Controller {
       // * Tell Fetch API that the Data is in JSON Format
       headers: { Accept: "application/json" },
       // * The Content of this POST Request is the Data of the Submitted Form
+      // * The is Directing to the "create.json.builder" to Find the JSON Format Data in "reviews#create"
       body: new FormData(this.formTarget),
     })
       .then((response) => response.json())
       .then((data) => {
         // This "data" Contains the HTML of the Original Form and Input Values of the Submitted Form
+        // Referring to "json.form" and "json.inserted_item" in "create.json.builder"
+        // Then become "data.form" and "data.inserted_item"
         console.log(data);
         // This "data.inserted_item" is the Input Values of the Form
         if (data.inserted_item) {
