@@ -1,7 +1,11 @@
 <h1>Restaurants</h1>
 
+<div class="my-4"></div>
+
 <ul>
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <div class="my-2">
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    </div>
   <% end %>
 </ul>

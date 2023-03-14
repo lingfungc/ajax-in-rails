@@ -21,6 +21,10 @@ export default class extends Controller {
     // This Contains Data of a set of Key/Value Pairs Representing the Form
     console.log(new FormData(this.formTarget));
 
+    for (const [key, value] of new FormData(this.formTarget).entries()) {
+      console.log(`${key}: ${value}`);
+    }
+
     // * Make a POST Request to the Form with Fetch API when a Form is Submitted
     fetch(this.formTarget.action, {
       method: "POST",
